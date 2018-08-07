@@ -39,6 +39,28 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="retail_partners_id" class="col-md-4 control-label">Retail Parntner</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" id="retail_partners_id" name="retail_partners_id">
+                                    <?php
+                                        
+                                        for($i=0; $i<count($retail_partners); $i++){
+                                            $retail_id = $retail_partners[$i]->id;
+                                            $retail_name = $retail_partners[$i]->name;
+                                            echo "<option value='$retail_id'>$retail_name</option>";
+                                        }
+                                    ?>
+                                </select>
+                                @if ($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 

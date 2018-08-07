@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function retailPartner(){
+        return $this->belongsTo(RetailPartner::class, 'retail_partners_id');
+    }
 }
