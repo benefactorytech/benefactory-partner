@@ -14,9 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/app_layout.css" rel="stylesheet">
     <!--<style>
-        .navbar-default{
-            border-color: #ffa500;
-        }
+        
     </style>-->
     @yield('head')
 </head>

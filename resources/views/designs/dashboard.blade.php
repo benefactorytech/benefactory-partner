@@ -19,8 +19,14 @@
 </div>
 -->
 
-<div class="container-fluid">
+<div class="container">
      <div class="col-md-2 dashboard-list">
+
+          <div class="partner-logo">
+          </div>
+     </div>
+
+     <div class="col-md-10 dashboard-body">
      </div>
 </div>
 @endsection
