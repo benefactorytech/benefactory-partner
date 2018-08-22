@@ -18,7 +18,6 @@ class CreateRetailPartnersTable extends Migration
             $table->string('name');
             $table->string('contact_person');
             $table->string('email');
-            $table->string('website');
             $table->timestamps();
         });
     }
