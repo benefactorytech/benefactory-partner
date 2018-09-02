@@ -38,9 +38,11 @@
 
         <div class="col-md-10 dashboard-body">
             <div class="row">
-                <div class="col-md-4 dashboard-card">
-                    <p class="dashboard-card-title">Make payment</p>
-                </div>
+                <a href="/card-payment">
+                    <div class="col-md-4 dashboard-card">
+                        <p class="dashboard-card-title">Make payment</p>
+                    </div>
+                </a>
 
                 <div class="col-md-4 dashboard-card">
                     <p class="dashboard-card-title">Payment history</p>

@@ -47,6 +47,21 @@ class HomeController extends Controller
         return view('dashboard')->with($data);
     }
 
+    public function cardPayment(){
+        $user = auth()->user();
+        $retailer_url = 'http://benefactory.dev/v1/retailers/' . $user->retail_partners_id;
+        $retailer_details = json_decode(file_get_contents($retailer_url));
+        $data = array(
+            "name" => $retailer_details->name,
+            "logo" => $retailer_details->logo,
+            "contact_person" => $retailer_details->contact_person,
+            "contact_email" => $retailer_details->email,
+            "website" => $retailer_details->website,
+        );
+
+        return view('stripe.cardpayment')->with($data);
+    }
+
     public function loginlayout(){
         return view('designs.login');
     }

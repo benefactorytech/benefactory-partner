@@ -19,5 +19,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/card-payment', 'HomeController@cardPayment');
+Route::post('/stripe/charge', 'StripeController@charge');
+
 Route::get('/loginlayout', 'HomeController@loginlayout');
 Route::get('/dashboardlayout', 'HomeController@dashboardlayout');
