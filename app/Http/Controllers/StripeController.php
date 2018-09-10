@@ -14,15 +14,13 @@ class StripeController extends Controller
 
     public function charge(Request $request){
         
-        return $request->all();
         Stripe::setApiKey('sk_test_HuUf0P92AbtUOXRdMaAOvqI8');
         $charge = Charge::create([
-            'amount' => $request->amount,
+            'amount' => 999,
             'currency' => 'usd',
-            'source' => $request->_token,
-            'customer' => '',
+            'description' => 'Example charge',
+            'source' => $request['stripeToken'],
         ]);
         return $charge;
-        return $request->all();
     }
 }

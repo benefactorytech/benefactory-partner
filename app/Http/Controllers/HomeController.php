@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $retailer_url = 'https://ttdev.benefactory.in/v1/retailers/';
     
     /**
      * Create a new controller instance.
@@ -22,16 +23,15 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $user = auth()->user();
-        $retailer_url = 'http://benefactory.dev/v1/retailers/' . $user->retail_partners_id;
+        $retailer_url = $this->retailer_url . $user->retail_partners_id;
         $retailer_details = json_decode(file_get_contents($retailer_url));
-        //return file_get_contents($url);
 
         $contribution_log_url = $retailer_url . '/contributionlog';
         $recent_contribution_log = json_decode(file_get_contents($contribution_log_url));
-        //return file_get_contents($contribution_log_url);
 
         $data = array(
             "name" => $retailer_details->name,
@@ -43,13 +43,12 @@ class HomeController extends Controller
                 "contribution_log" => $recent_contribution_log,
             ),
         );
-        //return $data;
         return view('dashboard')->with($data);
     }
 
     public function cardPayment(){
         $user = auth()->user();
-        $retailer_url = 'http://benefactory.dev/v1/retailers/' . $user->retail_partners_id;
+        $retailer_url = $this->retailer_url . $user->retail_partners_id;
         $retailer_details = json_decode(file_get_contents($retailer_url));
         $data = array(
             "name" => $retailer_details->name,

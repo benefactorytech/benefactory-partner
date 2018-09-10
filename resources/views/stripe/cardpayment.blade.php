@@ -1,96 +1,60 @@
-@extends('designs.app')
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-@section('head')
-    <link rel="stylesheet" href="/css/stripe.css">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/app_layout.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/stripe.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="app">
+        @include('include.navbar');
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 dashboard-list">
 
-    <style>
-        .dashboard-body{
-            padding: 20px;
-            background-color: #e0e7e2;
-        }
-    </style>
-@endsection
-
-@section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-2 dashboard-list">
-
-            <div class="partner-logo">
-                <img id="partner-logo" class="img-responsive" src="https://www.benefactory.in<?php echo $logo;?>">
-            </div>
-
-            <div class="partner-info">
-                <p id="partner-name"><b><?php echo $name; ?></b></p>
-                <hr class="info-break">
-                Contact Person: <p id="partner-contact-person"><b><?php echo $contact_person; ?></b></p>
-                Email: <p id="partner-contact-email"><b><?php echo $contact_email; ?></b></p>
-                Website: <p id="partner-website"><b><a href="<?php echo $website; ?>"><?php echo $website; ?></a></b></p>
-            </div>
-        </div>
-
-        <div class="col-md-10 dashboard-body">
-            <script src="https://js.stripe.com/v3/"></script>
-
-            <div class="form-container">
-            
-                <form action="/stripe/charge" method="post" id="payment-form">
-                    {{ csrf_field() }}
-                    
-                    <div class="">
-                        <div class="card">
-                            <label for="first_name">First Name&nbsp&nbsp</label>
-                            <input id="first_name" name="first_name">
-                        </div>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <div class="card">
-                            <label for="last_name">Last Name&nbsp&nbsp</label>
-                            <input id="last_name" name="last_name">    
-                        </div>
-                        <br><br>
-                        <div class="card">
-                            <label for="mobile">Mobile&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                            <input id="mobile" name="mobile">    
-                        </div>
-                        &nbsp&nbsp&nbsp&nbsp&nbsp
-                        <div class="card">
-                            <label for="email">Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-                            <input id="email" name="email">    
-                        </div>
+                    <div class="partner-logo">
+                        <img id="partner-logo" class="img-responsive" src="https://www.benefactory.in<?php echo $logo;?>">
                     </div>
 
-                    <hr>
+                    <div class="partner-info">
+                        <p id="partner-name"><b><?php echo $name; ?></b></p>
+                        <hr class="info-break">
+                        Contact Person: <p id="partner-contact-person"><b><?php echo $contact_person; ?></b></p>
+                        Email: <p id="partner-contact-email"><b><?php echo $contact_email; ?></b></p>
+                        Website: <p id="partner-website"><b><a href="<?php echo $website; ?>"><?php echo $website; ?></a></b></p>
+                    </div>
+                </div>
 
-                    <div class="form-row">
-                        <div class="card">
-                            <label for="amount">
-                                Amount&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <div class="col-md-10 dashboard-body">
+                    <script src="https://js.stripe.com/v3/"></script>
+
+                    <form action="/stripe/charge" method="post" id="payment-form">
+                        {{ csrf_field() }}
+                        <div class="form-row">
+                            <label for="card-element">
+                            Credit or debit card
                             </label>
-                            <input type="text" id="amount" name="amount">
-                        </div>
-                        <br><br>
+                            <div id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
+                            </div>
 
-                        <label for="card-element">
-                        Credit or debit card
-                        </label>
-                        <div id="card-element">
-                        <!-- A Stripe Element will be inserted here. -->
+                            <!-- Used to display form errors. -->
+                            <div id="card-errors" role="alert"></div>
                         </div>
 
-                        <!-- Used to display form errors. -->
-                        <div id="card-errors" role="alert"></div>
-                    </div>
-                    <hr>
-                    <button>Submit Payment</button>
-                </form>
-
+                        <button>Submit Payment</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="https://checkout.stripe.com/checkout.js"></script>
-<script src="/js/stripe.js"></script>
-@endsection
+    <script src="/js/stripeToken.js"></script>
+  </body>
+</html>
