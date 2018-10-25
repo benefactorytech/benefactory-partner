@@ -1,0 +1,44 @@
+#div_form_signup{
+    margin-top: 2vw;
+}
+
+.section-title{
+    display: block;
+    font-size: 1.2vw;
+    font-style: normal;
+}
+
+.form_signup{
+    color: black;
+    margin: 0.5vw;
+    width: 15vw;
+    height: 3vw;
+}
+
+#organization_introduction{
+    width: 31vw;
+    height: 6vw;
+}
+
+.select-option{
+    margin-left: 10px;
+    width: 13vw;
+}
+
+#logo, #banner{
+    padding: 0px;
+    border: 0px;
+}
+
+#introduction{
+    resize: none;
+}
+
+#btn_submit{
+    background-color: #Ffa500;
+    color: black;
+    border-color: #ffa500;
+    margin: auto;
+    margin-bottom: 2vw;
+}
+

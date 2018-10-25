@@ -9,27 +9,14 @@
     <link href="/css/app_layout.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/dashboard.css">
     <link rel="stylesheet" href="/css/stripe.css">
-    <title>Hello, world!</title>
+    <title>Benefactory - Pay</title>
   </head>
   <body>
     <div class="app">
         @include('include.navbar');
         <div class="container">
             <div class="row">
-                <div class="col-md-2 dashboard-list">
-
-                    <div class="partner-logo">
-                        <img id="partner-logo" class="img-responsive" src="https://www.benefactory.in<?php echo $logo;?>">
-                    </div>
-
-                    <div class="partner-info">
-                        <p id="partner-name"><b><?php echo $name; ?></b></p>
-                        <hr class="info-break">
-                        Contact Person: <p id="partner-contact-person"><b><?php echo $contact_person; ?></b></p>
-                        Email: <p id="partner-contact-email"><b><?php echo $contact_email; ?></b></p>
-                        Website: <p id="partner-website"><b><a href="<?php echo $website; ?>"><?php echo $website; ?></a></b></p>
-                    </div>
-                </div>
+                @include("include.partnerDetails")
 
                 <div class="col-md-10 dashboard-body">
                     <script src="https://js.stripe.com/v3/"></script>

@@ -76,3 +76,10 @@
     background-color: #426c79;
     color: white;
 }
+
+#btn_logout{
+    background-color: #426c79;
+    color: black;
+    width: 100%;
+    border-radius: 0;
+}

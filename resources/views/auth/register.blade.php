@@ -11,8 +11,31 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('countries_id') ? ' has-error' : '' }}">
+                            <label for="countries_id" class="col-md-4 control-label">Country</label>
+
+                            <div class="col-md-6">
+                                <!--<input id="countries_id" type="text" class="form-control" name="countries_id" value="{{ old('countries') }}" required autofocus>-->
+                                <select class="form-control" id="countries_id" name="countries_id">
+                                    <?php
+                                        for($i=0; $i < count($countries); $i++){
+                                            $country_id = $countries[$i]['id'];
+                                            $country_name = $countries[$i]['name'];
+                                            echo "<option value='$country_id'>$country_name</option>";
+                                        }
+                                    ?>
+                                </select>
+
+                                @if ($errors->has('countires_id'))
+                                    <span class="help-block">
+                                    <strong>{{ $errors->first('countries_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Organization Name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -31,28 +54,6 @@
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="retail_partners_id" class="col-md-4 control-label">Retail Parntner</label>
-
-                            <div class="col-md-6">
-                                <select class="form-control" id="retail_partners_id" name="retail_partners_id">
-                                    <?php
-                                        
-                                        for($i=0; $i<count($retail_partners); $i++){
-                                            $retail_id = $retail_partners[$i]->id;
-                                            $retail_name = $retail_partners[$i]->name;
-                                            echo "<option value='$retail_id'>$retail_name</option>";
-                                        }
-                                    ?>
-                                </select>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

@@ -15,6 +15,20 @@
                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
 
+                    <div class="form-group{{ $errors->has('countries_id') ? ' has-error' : '' }}">
+                         <label for="countries_id" class="col-md-4 control-label" style="color: black;">Country</label>
+
+                         <div class="col-md-6">
+                              <input id="countries_id" type="countries_id" class="form-control" name="countries_id" value="{{ old('countries_id') }}" required autofocus>
+
+                              @if ($errors->has('countries_id'))
+                                   <span class="help-block">
+                                   <strong>{{ $errors->first('countries_id') }}</strong>
+                                   </span>
+                              @endif
+                         </div>
+                    </div>
+
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                          <label for="email" class="col-md-4 control-label" style="color: black;">E-Mail Address</label>
 

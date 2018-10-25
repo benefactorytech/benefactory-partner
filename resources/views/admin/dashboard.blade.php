@@ -53,13 +53,10 @@
                             <th>Transaction ID</th>
                         </tr>
                         <?php
-                            
                             $contributions = $contribution_log['contribution_log'];
-                            if(count($contributions) > 0){
-                                foreach($contributions as $contribution){
-                                    echo '<tr><td>' . $contribution->customer_name . '</td><td>' . $contribution->customer_email . '</td><td>' . $contribution->amount . '</td><td>' . $contribution->transaction_id . '</td></tr>';
-                                }
-                            }
+                            foreach($contributions as $contribution){
+                                echo '<tr><td>' . $contribution->customer_name . '</td><td>' . $contribution->customer_email . '</td><td>' . $contribution->amount . '</td><td>' . $contribution->transaction_id . '</td></tr>';
+                            }                        
                         ?>
                 </table>
             </div>

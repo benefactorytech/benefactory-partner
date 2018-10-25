@@ -1,0 +1,20 @@
+#pdf_agreement{
+    width: 50%;
+    height: 600px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#accept_agreement{
+    padding: 3vw;
+    width: 50%;
+    margin-left:25%;
+    margin-right: 25%;
+    text-align: center;
+    font-size: 1.2vw;
+    color: black;
+}
+
+#agreed_agreement{
+    margin-right: 5px;
+}

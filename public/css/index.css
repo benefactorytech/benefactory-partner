@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "HelveticaNeueLTStd-Bd";
+    src:
+    url("http://www.benefactory.live/wp-content/themes/twentyseventeen-child/fonts/helvetica/HelveticaNeueLTStd-Bd.otf") format("opentype"),
+    url("http://www.benefactory.live/wp-content/themes/twentyseventeen-child/fonts/helvetica/HelveticaNeueLTStd-Bd.svg#filename") format("svg");
+}
+
+.retailer-section-content{
+    position: absolute;
+    top: 60px;
+    width: 48%;
+    padding: 0px 50px;
+    font-family: HelveticaNeueLTStd-Bd,Helvetica,Arial,sans-serif;
+}
+
+.title{
+    font-size: 4vw;
+    line-height: normal;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.tagline{
+    font-size: 2vw;
+    line-height: normal;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.content{
+    font-size: 0.9vw;
+}
+
+.white{
+    color: #fff !important;
+}
+
+.background-image{
+    height: auto;
+    max-width: 100%;
+}
+
+.btn{
+    border-color: #fff;
+    text-align: center;
+    width: 200px;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    display: table;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0px;
+}
+
+#hr-break{
+    background:#fff;
+    border:0 solid #000;
+    height:0.5vw;
+    margin-top:0;
+    margin-left: 1vw;
+    position:absolute;
+    width:6vw;
+    z-index:1;
+}

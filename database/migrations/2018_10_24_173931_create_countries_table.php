@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRetailPartnersTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateRetailPartnersTable extends Migration
      */
     public function up()
     {
-        Schema::create('retail_partners', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('contact_person');
-            $table->string('email');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateRetailPartnersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retail_partners');
+        Schema::dropIfExists('countries');
     }
 }
