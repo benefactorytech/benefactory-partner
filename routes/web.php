@@ -42,6 +42,5 @@ Route::get('/userinformation/{country_id}/agreement', 'AdminController@agreement
 Route::post('/userinformation/{country_id}/agreement', 'AdminController@acceptedagreement');
 Route::get('/userinformation/create', 'AdminController@create');
 Route::post('/userinformation/register', 'AdminController@registerRetailer');
-
 Route::get('/loginlayout', 'HomeController@loginlayout');
 Route::get('/dashboardlayout', 'HomeController@dashboardlayout');

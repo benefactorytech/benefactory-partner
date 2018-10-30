@@ -106,7 +106,7 @@ class AdminController extends Controller
     }
 
     public function registerRetailer(Request $request){
-        //return $request->all();
+        return $request->all();
         
         $domain_name = substr($request->website, 7);
         $slug = strtolower(str_replace(" ", "_", $request->organization_name));

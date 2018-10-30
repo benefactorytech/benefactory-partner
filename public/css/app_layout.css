@@ -10,3 +10,16 @@
      height: 20px;
      margin: auto;
 }
+
+.btn-custom-submit{
+    background-color: #Ffa500;
+    color: black;
+    border-color: #ffa500;
+    width: 100%;
+}
+
+.btn-custom-submit:hover{
+    background-color: #FFC04C;
+    border-color: #FFC04C;
+    color: #000000;
+}

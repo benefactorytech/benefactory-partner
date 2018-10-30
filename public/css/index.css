@@ -40,23 +40,6 @@
     max-width: 100%;
 }
 
-.btn{
-    border-color: #fff;
-    text-align: center;
-    width: 200px;
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    cursor: pointer;
-    display: table;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 0px;
-}
-
 #hr-break{
     background:#fff;
     border:0 solid #000;

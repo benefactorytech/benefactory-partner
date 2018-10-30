@@ -1,4 +1,4 @@
-@extends("designs.app")
+@extends("layouts.app")
 
 @section("head")
     <link rel="stylesheet" href="/css/index.css">
@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                            <label for="last_name" class="col-md-4 control-label">last Name</label>
+                            <label for="last_name" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
                                 <input id="last_name" type="text" class="form-control" name="last_name" required>
@@ -72,15 +72,6 @@
                                 @endif
                             </div>
                         </div>
-
-                        <!--<div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                        -->
                     </div>
                 </div>
 
@@ -225,7 +216,7 @@
                         <input type="hidden" id="status" name="status" value="1" />
                     </div>
                 </div>
-                <button id="btn_submit" type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary btn-custom-submit" style="margin-bottom: 40px;">
                     Next
                 </button>
             </div>
