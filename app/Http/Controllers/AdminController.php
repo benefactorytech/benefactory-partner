@@ -114,7 +114,7 @@ class AdminController extends Controller
             'status' => $request->status,
             'save_action' => 'save_and_back'
         ];
-        
+        return $data_to_post;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://ttdev.benefactory.in/v1/retailers/register");
         curl_setopt($ch, CURLOPT_POST, 1);
