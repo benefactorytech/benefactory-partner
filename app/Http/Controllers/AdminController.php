@@ -85,6 +85,7 @@ class AdminController extends Controller
         
         //logo and intro image
         $path = $request->file("logo");
+        return $path;
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
         $logo_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
