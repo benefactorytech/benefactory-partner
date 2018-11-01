@@ -12,7 +12,7 @@
         <form action="{{ url()->current() }}" method="POST">
             {{ csrf_field() }}
             <input type="checkbox" id="agreed_agreement" name="agreed_agreement" value="1">I, on behalf of {{ auth()->user()->name }} accept the Terms and Conditions mentioned above.
-            <br><button class="btn-custom" type="submit">Next</button>
+            <br><button class="btn btn-primary btn-custom-submit" type="submit">Next</button>
         </form>
     </div>
 </div>

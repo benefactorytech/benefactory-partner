@@ -1,4 +1,4 @@
-@extends("designs.appWithoutNav")
+@extends("layouts.appWithoutNav")
 
 @section("head")
     <link rel="stylesheet" href="/css/index.css">
@@ -17,8 +17,8 @@
                 We engage brands, no matter how big or small, to join forces and make unimaginable changes by harnessing consumer actions.<br><br>
                 As soon as a crisis arises, you can be part of the change almost immediately. No hassles of planning campaigns and no delays in executing them.
             </p>
-            <a class="btn btn-custom" href="/login">Login</a>
-            <a class="btn btn-custom" href="/register">Sign up Now</a>
+            <a class="btn btn-custom-index" href="/login">Login</a>
+            <a class="btn btn-custom-index" href="/register">Sign up Now</a>
         </div>
     </div>
 </div>

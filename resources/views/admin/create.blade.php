@@ -129,7 +129,7 @@
                             <label for="logo" class="col-md-4 control-label">Logo</label>
 
                             <div class="col-md-6">
-                                <input id="logo" type="file" class="form-control" name="logo" accept="image/*" required>
+                                <input id="logo" type="file" class="form-control" name="logo" required>
 
                                 @if ($errors->has('logo'))
                                     <span class="help-block">
@@ -143,7 +143,7 @@
                             <label for="banner" class="col-md-4 control-label">Banner</label>
 
                             <div class="col-md-6">
-                                <input id="banner" type="file" class="form-control" name="banner" accept="image/*" required>
+                                <input id="banner" type="file" class="form-control" name="banner" required>
 
                                 @if ($errors->has('banner'))
                                     <span class="help-block">
