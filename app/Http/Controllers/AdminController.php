@@ -108,7 +108,7 @@ class AdminController extends Controller
             $name = $logo_image->getClientOriginalName();
             $type = pathinfo($logo_image, PATHINFO_EXTENSION);
             $logo_image->move($path, $name);
-            $logo_file = file_get_contents($path . $name);
+            $logo_file = file_get_contents(url("/images/" . $name));
             $logo = 'data:image/' . $type . ';base64,' . base64_encode($logo_file);
         }
         //banner
@@ -117,7 +117,7 @@ class AdminController extends Controller
             $name = $banner_image->getClientOriginalName();
             $type = pathinfo($banner_image, PATHINFO_EXTENSION);
             $banner_image->move($path, $name);
-            $banner_file = file_get_contents($path . $name);
+            $banner_file = file_get_contents(url("/images/" . $name));
             $banner = 'data:image/' . $type . ';base64,' . base64_encode($banner_file);
         }
 
