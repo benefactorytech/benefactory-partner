@@ -88,7 +88,7 @@ class AdminController extends Controller
     public function registerRetailer(Request $request){
         $domain_name = substr($request->website, 7);
         $slug = strtolower(str_replace(" ", "_", $request->organization_name));
-        /*
+        
         //logo and intro image
         $path = $request->file("logo");
         $type = pathinfo($path, PATHINFO_EXTENSION);
@@ -100,7 +100,8 @@ class AdminController extends Controller
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
         $banner_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-        */
+        
+        /*
         $path = public_path().'/images/';
         //logo
         if($request->hasfile("logo")){
@@ -120,7 +121,7 @@ class AdminController extends Controller
             $banner_file = file_get_contents(url("/images/" . $name));
             $banner = 'data:image/' . $type . ';base64,' . base64_encode($banner_file);
         }
-
+        */
         $data_to_post = [
             'name' => $request->organization_name,
             'logo' => $logo,
