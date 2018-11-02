@@ -123,9 +123,9 @@ class AdminController extends Controller
 
         $data_to_post = [
             'name' => $request->organization_name,
-            'logo' => $logo_base64,
-            'intro_image' => $logo_base64,
-            'banner' => $banner_base64,
+            'logo' => $logo,
+            'intro_image' => $logo,
+            'banner' => $banner,
             'contact_person' => $request->first_name . ' ' . $request->last_name,
             'contact_number' => $request->mobile,
             'email' => $request->email,
