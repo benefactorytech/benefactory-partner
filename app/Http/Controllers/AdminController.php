@@ -79,13 +79,11 @@ class AdminController extends Controller
     }
 
     public function registerRetailer(Request $request){
-        return $request->file("logo");
         $domain_name = substr($request->website, 7);
         $slug = strtolower(str_replace(" ", "_", $request->organization_name));
         
         //logo and intro image
         $path = $request->file("logo");
-        return $path;
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
         $logo_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
@@ -115,7 +113,6 @@ class AdminController extends Controller
             'status' => $request->status,
             'save_action' => 'save_and_back'
         ];
-        return $data_to_post;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://ttdev.benefactory.in/v1/retailers/register");
         curl_setopt($ch, CURLOPT_POST, 1);
