@@ -81,47 +81,25 @@ class AdminController extends Controller
     /*
     |   Interface between the actual database and the Retailer dashboard
     |   Validate the data so that it matches the contraints on the original website
-    |   First store the image onto the server, save the file name
+    |   Image will be stored as .tmp and the file type is pre-defined
     |   Use that file to get contents and convert to base64
     |   Once done for logo, intro_image and banner, post the data using CURL
     */
     public function registerRetailer(Request $request){
         $domain_name = substr($request->website, 7);
         $slug = strtolower(str_replace(" ", "_", $request->organization_name));
-        
+
         //logo and intro image
         $path = $request->file("logo");
         $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
-        $logo_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+        $logo = 'data:image/tmp;base64,' . base64_encode($data);
 
         //banner
         $path = $request->file("banner");
-        $type = pathinfo($path, PATHINFO_EXTENSION);
         $data = file_get_contents($path);
-        $banner_base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-        
-        /*
-        $path = public_path().'/images/';
-        //logo
-        if($request->hasfile("logo")){
-            $logo_image = $request->file("logo");
-            $name = $logo_image->getClientOriginalName();
-            $type = pathinfo($logo_image, PATHINFO_EXTENSION);
-            $logo_image->move($path, $name);
-            $logo_file = file_get_contents(url("/images/" . $name));
-            $logo = 'data:image/' . $type . ';base64,' . base64_encode($logo_file);
-        }
-        //banner
-        if($request->hasfile("banner")){
-            $banner_image = $request->file("banner");
-            $name = $banner_image->getClientOriginalName();
-            $type = pathinfo($banner_image, PATHINFO_EXTENSION);
-            $banner_image->move($path, $name);
-            $banner_file = file_get_contents(url("/images/" . $name));
-            $banner = 'data:image/' . $type . ';base64,' . base64_encode($banner_file);
-        }
-        */
+        $banner = 'data:image/tmp;base64,' . base64_encode($data);
+
         $data_to_post = [
             'name' => $request->organization_name,
             'logo' => $logo,
@@ -141,6 +119,7 @@ class AdminController extends Controller
             'status' => $request->status,
             'save_action' => 'save_and_back'
         ];
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL,"https://ttdev.benefactory.in/v1/retailers/register");
         curl_setopt($ch, CURLOPT_POST, 1);
