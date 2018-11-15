@@ -1,0 +1,53 @@
+.panel{
+    border: 1px solid;
+    border-radius: 8px;
+    width: 280px;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.panel-heading, .panel-footer{
+    width: 280px;
+    margin: auto;
+    height: 30px;
+    /* border: 1px solid; 8 */
+    text-align: center;
+}
+
+.panel-content{
+    width: 280px;
+    margin: auto;
+    /* border: 1px solid; */
+}
+.panel-left, .panel-right{
+    /* border: 1px solid; */
+    height: 300px;
+}
+
+.content-holder{
+    text-align: left;
+    width: 250px;
+    margin: 15px;
+    /* border: 1px solid; */
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.content{
+    display: inline-block;
+    font-size: 15px;
+}
+
+#paypal-button-container{
+    width: 250px;
+    margin: auto;
+}
+
+.panel-btn{
+    display: block;
+    width: 250px;
+    margin: 15px;
+    /* border: 1px solid; */
+    background-color: #0056b3;
+    color: #ffffff;
+}

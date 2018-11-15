@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/app_layout.css" rel="stylesheet">
+    <link href="/css/fonts.css" rel="stylesheet">
     <!--<style>
         
     </style>-->

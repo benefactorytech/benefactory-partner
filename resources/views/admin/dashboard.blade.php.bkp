@@ -1,0 +1,64 @@
+@extends('layouts.app')
+
+@section('head')
+    <link rel="stylesheet" href="/css/dashboard.css">
+@endsection
+
+@section('content')
+<div class="container">
+    <div class="row">
+        @include("include.partnerDetails")
+
+        <div class="col-md-10 dashboard-body">
+            <div class="row">
+                <a href="/admin/integrations">
+                    <div class="col-md-4 dashboard-card">
+                        <p class="dashboard-card-title">Integrations</p>
+                    </div>
+                </a>
+
+                <a href="/admin/payment">
+                    <div class="col-md-4 dashboard-card">
+                        <p class="dashboard-card-title">Make payment</p>
+                    </div>
+                </a>
+
+                <a href="/admin/payment-history">
+                    <div class="col-md-4 dashboard-card">
+                        <p class="dashboard-card-title">Payment history</p>
+                    </div>
+                </a>
+
+                <a href="/admin/transaction-log">
+                    <div class="col-md-4 dashboard-card">
+                        <p class="dashboard-card-title">Customer transaction log</p>
+                    </div>
+                </a>
+            </div>
+            <hr class="info-break">
+            @if (count($contribution_log['contribution_log']) > 0)
+                <div id="customer-transaction-log">
+                    <div>
+                        <p class="dashboard-card-title">Recent customer Donations</p>
+                    </div>
+
+                    <table id="customer-transaction-table">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Amount</th>
+                                <th>Transaction ID</th>
+                            </tr>
+                            <?php
+                                $contributions = $contribution_log['contribution_log'];
+                                foreach($contributions as $contribution){
+                                    echo '<tr><td>' . $contribution->customer_name . '</td><td>' . $contribution->customer_email . '</td><td>' . $contribution->amount . '</td><td>' . $contribution->transaction_id . '</td></tr>';
+                                }                        
+                            ?>
+                    </table>
+                </div>
+            @endif
+        </div>
+    </div>
+</div>
+@endsection

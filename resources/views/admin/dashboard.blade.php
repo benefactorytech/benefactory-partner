@@ -5,47 +5,69 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         @include("include.partnerDetails")
 
-        <div class="col-md-10 dashboard-body">
-            <div class="row">
-                <a href="/card-payment">
-                    <div class="col-md-4 dashboard-card">
-                        <p class="dashboard-card-title">Make payment</p>
-                    </div>
-                </a>
-
-                <div class="col-md-4 dashboard-card">
-                    <p class="dashboard-card-title">Payment history</p>
-                </div>
-
-                <div class="col-md-4 dashboard-card">
-                    <p class="dashboard-card-title">Customer transaction log</p>
-                </div>
+        <div class="col-xs-12 col-sm-3 col-md-3 dashboard-tab">
+            <div class="tab-title">
+                <h3 class="title text-center">Integration</h3>
             </div>
-            <hr class="info-break">
-            <div id="customer-transaction-log">
-                <div>
-                    <p class="dashboard-card-title">Recent customer Donations</p>
-                </div>
 
-                <table id="customer-transaction-table">
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Amount</th>
-                            <th>Transaction ID</th>
-                        </tr>
-                        <?php
-                            $contributions = $contribution_log['contribution_log'];
-                            foreach($contributions as $contribution){
-                                echo '<tr><td>' . $contribution->customer_name . '</td><td>' . $contribution->customer_email . '</td><td>' . $contribution->amount . '</td><td>' . $contribution->transaction_id . '</td></tr>';
-                            }                        
-                        ?>
-                </table>
+            <div class="tab-image">
+                <img class="center" src="/images/dashboard/integrate.png">
             </div>
+
+            <p class="tab-description">
+            Manual on how to integrate with our APIs.<br><br>
+            Detailed description and pre-defined code that you can use directly on your website.<br><br>
+            Click below to know more.
+            </p>
+            <a href="">
+                <button class="btn btn-custom-orange">Integrate</button>
+            </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 dashboard-tab">
+            <div class="tab-title">
+                <h3 class="title text-center">Customer<br>Transaction<br>Log</h3>
+            </div>
+
+            <div class="tab-image">
+                <img class="center" src="/images/dashboard/log.png">
+            </div>
+
+            <p class="tab-description">
+                Customers who donated through your website.<br><br>
+                Tabular format. Payments are calculated on accumulated amount.<br><br>
+                Export available as PDF, Excel sheet.
+            </p>
+            <a href="/admin/customertransactionlog">
+                <button class="btn btn-custom-orange">CT Log</button>
+            </a>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 dashboard-tab">
+            <div class="tab-title">
+                <h3 class="title text-center">Payment<br>and<br>History</h3>
+            </div>
+
+            <div class="tab-image" id="payment-tab-image">
+                <img class="center" src="/images/dashboard/payment.png">
+            </div>
+
+            <p class="tab-description">
+                Total month-wise donation.<br><br>
+                Payable amount is accumulation of transactions.<br><br>
+                History of previous payments
+            </p>
+            <a href="/admin/payment">
+                <button class="btn btn-custom-orange">Pay</button>
+            </a>
+            <br>
+            <a href="">
+                <button class="btn btn-custom-orange">Payment History</button>
+            </a>
         </div>
     </div>
 </div>

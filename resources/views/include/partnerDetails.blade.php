@@ -1,17 +1,23 @@
-<div class="col-md-2 dashboard-list">
-    <div class="partner-logo">
-        <img id="partner-logo" class="img-responsive" src="https://ttdev.benefactory.in<?php echo $logo;?>">
-    </div>
+<div class="col-xs-12 col-sm-3 col-md-3 dashboard-tab">
+    <img id="retailer-logo" class="img-responsive" src="https://ttdev.benefactory.in{{ $logo }}" >
 
-    <div class="partner-info">
-        <p id="partner-name"><b><?php echo $name; ?></b></p>
-        <hr class="info-break">
-        Contact Person: <p id="partner-contact-person"><b><?php echo $contact_person; ?></b></p>
-        Email: <p id="partner-contact-email"><b><?php echo $contact_email; ?></b></p>
-        Website: <p id="partner-website"><b><a href="<?php echo $website; ?>"><?php echo $website; ?></a></b></p>
-    </div>
+    <h2 class="text-center" id="retailer-name">{{ $name }}</h2>
+    <hr class="dashboard-hr">
+
+    <p class="info-label">Contact Person:</p>
+    <p class="info-content">{{ $contact_person }}</p>
     
-    <a class="btn text-center" id="btn_logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <p class="info-label">Email:</p>
+    <p class="info-content">{{ $contact_email }}</p>
+    
+    <p class="info-label">Website:</p>
+    <p class="info-content">{{ $website }}</p>
+    <br>
+    <a href="">
+        <button class="btn btn-custom-orange">Edit Details</button>
+    </a>
+    <br>
+    <a class="btn text-center btn-custom-orange" id="btn_logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         Logout
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}

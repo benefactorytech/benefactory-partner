@@ -1,0 +1,45 @@
+.payment-dashboard{
+    width: 100%;
+}
+
+.status-holder{
+    width: 84px;
+    height: 180px;
+    padding: 2px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+    margin: 5px;
+    font-size: 12px;
+    /* border: 1px solid; */ 
+}
+
+.status-content{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 1px solid;
+    display: table-cell;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.status-content:hover{
+    width: 80px;
+    height: 80px;
+    border-radius: 60px;
+}
+
+.action-button{
+    position: relative;
+    text-align: center;
+    border: 1px solid;
+    margin: 20px;
+    width: 200px;
+    display: block;
+}
+
+.action-button:hover{
+    width: 220px;
+    height: auto;
+}

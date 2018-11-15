@@ -11,36 +11,25 @@
 |
 */
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-//Auth::routes();
-
-//Authentication routes
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\LoginController@login');
-Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
-
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
-
-Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
-Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkResetForm')->name('password.request');
-Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Auth::routes();
 
 //Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'AdminController@dashboard');
 Route::get('/', 'FrontendController@index');
-Route::get('/card-payment', 'HomeController@cardPayment');
-Route::post('/stripe/charge', 'StripeController@charge');
 
 //load view for retailer information
 Route::get('/userinformation/{country_id}/agreement', 'AdminController@agreement');
 Route::post('/userinformation/{country_id}/agreement', 'AdminController@acceptedagreement');
 Route::get('/userinformation/create', 'AdminController@create');
 Route::post('/userinformation/register', 'AdminController@registerRetailer');
-Route::get('/loginlayout', 'HomeController@loginlayout');
-Route::get('/dashboardlayout', 'HomeController@dashboardlayout');
+
+//Customer Transaction Log
+Route::get("/admin/customertransactionlog", "CustomerTransactionLogController@index");
+
+//Payment
+Route::get("/admin/payment", "PaymentController@index");
+Route::get("/admin/payment/do", "PaymentController@chooseGateway");
+//PayPal
+Route::get("/admin/payment/do/gateway", "PaypalController@index");
+Route::middleware('auth:api')->get("/admin/payment/do/gateway/paid", "PaypalController@paid");
+Route::get("/admin/payment/do/gateway/history", "PaypalController@paymentHistory");

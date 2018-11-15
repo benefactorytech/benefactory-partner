@@ -17,8 +17,12 @@
                 We engage brands, no matter how big or small, to join forces and make unimaginable changes by harnessing consumer actions.<br><br>
                 As soon as a crisis arises, you can be part of the change almost immediately. No hassles of planning campaigns and no delays in executing them.
             </p>
-            <a class="btn btn-custom-index" href="/login">Login</a>
-            <a class="btn btn-custom-index" href="/register">Sign up Now</a>
+            @if (Auth::guest())
+                <a class="btn btn-custom-index" href="/login">Login</a>
+                <a class="btn btn-custom-index" href="/register">Sign up Now</a>
+            @else
+                <a class="btn btn-custom-index" href="/dashboard">Dashboard</a>
+            @endif
         </div>
     </div>
 </div>
