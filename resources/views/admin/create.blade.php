@@ -216,11 +216,18 @@
                         <input type="hidden" id="status" name="status" value="1" />
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-custom-submit" style="margin-bottom: 40px;">
+                <button type="submit" class="btn btn-primary btn-custom-submit" style="margin-bottom: 20px;">
                     Next
                 </button>
+                <a class="btn text-center btn-custom-submit" id="btn_logout" style="margin-bottom: 40px;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+
+                </a>
             </div>
         </div>
+    </form>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+            {{ csrf_field() }}
     </form>
 </div>
 @endsection

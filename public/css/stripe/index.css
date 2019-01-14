@@ -1,0 +1,51 @@
+.content-bar{
+  height: 400px;
+}
+
+.content-card{
+  width: 98%;
+  margin: auto;
+  background-color: #ffffff;
+  /* border: 1px solid; */
+}
+
+.agreement-box{
+  width: 98%;
+  margin: 1%;
+  padding: 5px;
+  font-family: "Colfax Medium Italic";
+  color: #000000;
+  /* border: 1px solid; */
+}
+
+.form-box{
+  width: 320px;
+  margin: auto;
+  /* padding: 5px; */
+  /* border: 1px solid; */
+}
+
+.form-element{
+  width: 98%;
+  height: 40px;
+  margin: 1%;
+  margin-bottom: 10px;
+  /* border: 1px solid; */
+  text-align: center;
+}
+
+input::placeholder{
+  font-family: "Colfax Regular";
+  color: #000000;
+  text-align: center;
+}
+
+.btn-benefactory{
+  width: 47%;
+  height: 40px;
+  margin: 1%;
+  display: inline-block;
+  background-color: #fdf1f1;
+  color: #e32626;
+  font-family: Helvetica, sans-serif;
+}

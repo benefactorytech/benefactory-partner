@@ -1,21 +1,26 @@
-
+body{
+    background-color: #ebebeb;
+}
 .dashboard-tab{
     width: 22%;
+    height: 600px;
     margin-left: 1.5%;
     margin-right: 1%;
-    border: 1px solid;
+    /*border: 1px solid; */
     padding: 10px;
+    background-color: #ffffff;
 }
 
+/*
 .dashboard-tab:hover{
     background-color: #ebebeb;
 }
-
+*/
 .btn-custom-orange{
     width: 100%;
     margin-bottom: 3%;
-    color: #000000;
-    background-color: #ffa500;
+    background-color: rgb(253, 241, 241);
+    color: red;
     border-radius: 0px;
     font-family: Colfax-Medium;
     font-size: 12px;

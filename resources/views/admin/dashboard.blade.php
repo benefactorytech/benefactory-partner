@@ -23,7 +23,7 @@
             Detailed description and pre-defined code that you can use directly on your website.<br><br>
             Click below to know more.
             </p>
-            <a href="">
+            <a href="/admin/integrations">
                 <button class="btn btn-custom-orange">Integrate</button>
             </a>
         </div>

@@ -14,16 +14,28 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/app_layout.css" rel="stylesheet">
     <link href="/css/fonts.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    
+    <!-- jquery -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.js"
+			  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			  crossorigin="anonymous"></script>
+    
     <!--<style>
         
     </style>-->
     @yield('head')
 </head>
 <body>
+    @include('include.navbar')
     <div id="app"> 
-          @include('include.navbar')
+          
 
         @yield('content')
+
     </div>
+    <br><br><br><br>
+    @include('include.footer')
 </body>
 </html>

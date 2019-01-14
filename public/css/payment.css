@@ -18,10 +18,12 @@
     width: 70px;
     height: 70px;
     border-radius: 50px;
-    border: 1px solid;
+    /*border: 1px solid; */
     display: table-cell;
     margin: auto;
     vertical-align: middle;
+    background-color: #ffffff;
+    color: black;
 }
 
 .status-content:hover{
@@ -33,10 +35,12 @@
 .action-button{
     position: relative;
     text-align: center;
-    border: 1px solid;
+    /*border: 1px solid;*/
     margin: 20px;
     width: 200px;
     display: block;
+    background-color: #ffffff;
+    color: black;
 }
 
 .action-button:hover{

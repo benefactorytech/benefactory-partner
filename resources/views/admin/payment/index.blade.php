@@ -19,13 +19,14 @@
             <div class="payment-dashboard" id="payment-dashboard">
                     <div class="status-holder">
                         <div class="status-content">
-                            
+                            {{ $total_contributions }}
                         </div>
                         <p>Total customer transactions</p>
                     </div>
 
                     <div class="status-holder">
                         <div class="status-content" id="total-transaction-amount">
+                            {{ $total_amount }}
                         </div>
                         <p>Total transaction amount</p>
                     </div>
